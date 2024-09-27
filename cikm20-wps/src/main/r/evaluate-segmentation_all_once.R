@@ -62,6 +62,10 @@ for (id in ids) {
   }
   
   output.file <- file.path(options$output.dir, paste0(id, ".csv"))
+  # if output file already exists, skip
+  if (file.exists(output.file)) {
+    next
+  }
   ground.truth.segmentation <- "majority-vote"
   
   task.algorithm <- subset(ReadTask(algo.file), options$algo.name)
