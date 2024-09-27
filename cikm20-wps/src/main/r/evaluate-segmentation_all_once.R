@@ -54,6 +54,9 @@ ids <- fromJSON(options$ids.file)
 size.functions <- c("pixels", "chars", "nodes", "edges-fine", "edges-coarse")
 
 for (id in ids) {
+  # print progress. which is the id being processed. how many ids are there in total.
+  print(paste("Processing ID:", id, "(", which(ids == id), "of", length(ids), ")"))
+  
   start <- Sys.time()
   algo.file <- file.path(options$algo.dir, paste0(id, ".json"))
   ground.truth.file <- file.path(options$ground.truth.dir, id, "ground-truth.json")
