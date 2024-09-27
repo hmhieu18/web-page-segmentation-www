@@ -1,0 +1,1 @@
+Rscript C:/Users/minhh/OneDrive/Documents/web-page-segmentation-www/cikm20-wps/src/main/r/plot-segmentation-mask.R --input C:/Users/minhh/Downloads/webbis_results/content/webis_results/000106.json --screenshot C:/Users/minhh/Downloads/webis-webseg-20-selected/000106/screenshot.png --output . --segmentations sam
