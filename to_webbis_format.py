@@ -26,8 +26,8 @@ import cv2
 import numpy as np
 
 
-screenshots_dir = 'C:/Users/minhh/Downloads/webis-webseg-20-selected (1)'
-results_dir = 'c:/Users/minhh/Downloads/sam-results-20240926T222517Z-001/sam-results'
+screenshots_dir = 'webis-webseg-20-selected'
+results_dir = '/content/drive/MyDrive/kat-backup/sam-results'
 results_files = sorted([file for file in os.listdir(results_dir) if file.endswith('.npy')])
 webis_results_dir = 'webis_results'
 if not os.path.exists(webis_results_dir):
