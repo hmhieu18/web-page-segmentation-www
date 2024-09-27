@@ -51,10 +51,10 @@ if (is.null(options$ground.truth.dir)) {
 ################################################################################
 
 ids <- fromJSON(options$ids.file)
-size.functions <- c("pixels", "chars", "nodes")
-#  "edges-fine", "edges-coarse")
+size.functions <- c("pixels", "chars", "nodes", "edges-fine", "edges-coarse")
 
 for (id in ids) {
+  start <- Sys.time()
   algo.file <- file.path(options$algo.dir, paste0(id, ".json"))
   ground.truth.file <- file.path(options$ground.truth.dir, id, "ground-truth.json")
   if (!file.exists(ground.truth.file)) {
@@ -108,7 +108,11 @@ for (id in ids) {
       row.names[idx] <- paste(names(task.ground.truth$segmentations)[gt], size.function, sep=".")
     }
   }
-  
+    
+  end <- Sys.time()
+  total.time <- end - start
+  print(paste("Total time:", total.time))
+
   rownames(bcubed) <- row.names
   
   write.csv(bcubed, file=output.file)
