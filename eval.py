@@ -46,3 +46,6 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+
+# Rscript C:\Users\minhh\OneDrive\Documents\web-page-segmentation-www\cikm20-wps\src\main\r\evaluate-segmentation_all_once.R --algo-dir "C:\Users\minhh\OneDrive\Documents\web-page-segmentation-www\webis_results" --algo-name "sam" --ids-file C:\Users\minhh\OneDrive\Documents\web-page-segmentation-www\ids.json --output-dir C:\Users\minhh\OneDrive\Documents\web-page-segmentation-www\SAM_results --ground-truth-dir C:\Users\minhh\Downloads\webis-webseg-20-selected
