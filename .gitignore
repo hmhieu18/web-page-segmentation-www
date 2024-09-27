@@ -1,2 +1,5 @@
 output
 eval
+*.png
+webis-webseg-20-fitted
+

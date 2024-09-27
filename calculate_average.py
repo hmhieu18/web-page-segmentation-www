@@ -1,6 +1,6 @@
 import os 
 import pandas as pd
-eval_dir = 'C:/Users/minhh/Downloads/evaluation-results-834/content/drive/MyDrive/kat-backup/evaluation-results'
+eval_dir = r'C:\Users\minhh\Downloads\evaluation-results-20240927T162806Z-001\evaluation-results'
 eval_files = sorted([file for file in os.listdir(eval_dir) if file.endswith('.csv')])
 
 df = pd.DataFrame()
