@@ -1,8 +1,19 @@
 packages <- c("jsonlite", "optparse", "png", "raster", "sf", "sp")
 
-# install.packages("jsonlite")
-# install.packages("optparse")
-# install.packages("png")
-install.packages("web-page-segmentation-www/r-packages/raster_3.6-26.tar.gz", repos = NULL, type="source")
-install.packages("web-page-segmentation-www/r-packages/sf_1.0-17.tar.gz", repos = NULL, type="source")
-install.packages("web-page-segmentation-www/r-packages/sp_2.1-4.tar.gz", repos = NULL, type="source")
+# Specify the versions for each package
+package_versions <- c("jsonlite" = "1.7.2",
+                      "optparse" = "1.6.6",
+                      "png" = "0.1.7",
+                      "raster" = "3.4.5",
+                      "sf" = "0.9.6",
+                      "sp" = "1.4.4")
+
+# Install packages with specific versions
+for (pkg in packages) {
+  if (!requireNamespace(pkg, quietly = TRUE) || packageVersion(pkg) != package_versions[pkg]) {
+    install.packages(pkg, version = package_versions[pkg], repos = "http://cran.rstudio.com/")
+  }
+}
+
+# Load the packages to confirm installation
+lapply(packages, library, character.only = TRUE)
