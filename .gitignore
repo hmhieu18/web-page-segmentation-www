@@ -3,3 +3,5 @@ eval
 *.png
 webis-webseg-20-fitted
 
+evaluation-fitted-results
+sam-fitted-flat

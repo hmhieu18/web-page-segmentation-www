@@ -46,6 +46,10 @@ if (is.null(options$ground.truth.dir)) {
   stop("Missing ground truth directory", call.=FALSE)
 }
 
+if (!dir.exists(options$output.dir)) {
+  dir.create(options$output.dir)
+}
+
 ################################################################################
 ## EXECUTION
 ################################################################################
@@ -58,7 +62,7 @@ for (id in ids) {
   print(paste("Processing ID:", id, "(", which(ids == id), "of", length(ids), ")"))
   
   start <- Sys.time()
-  algo.file <- file.path(options$algo.dir, paste0(id, ".json"))
+  algo.file <- file.path(options$algo.dir, paste0(id, "_fitted_flat.json"))
   ground.truth.file <- file.path(options$ground.truth.dir, id, "ground-truth.json")
   if (!file.exists(ground.truth.file)) {
     stop(paste("Ground truth file not found for ID:", id), call.=FALSE)
